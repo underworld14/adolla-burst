@@ -3,5 +3,17 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["resources/*"],
+      "extends": [
+        "react-app",
+        "prettier"
+      ],
+      "rules": {
+        "no-unused-vars": "error"
+      }
+    }
+  ]
 }
