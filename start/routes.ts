@@ -1,21 +1,9 @@
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+// auth
+Route.get('/auth/login', 'AuthController.loginPage')
+Route.post('/auth/login', 'AuthController.login')
+Route.post('/auth/logout', 'AuthController.logout')
 
-Route.get('/test', async ({ inertia }) => {
-  return inertia.render('Test')
-})
-
-Route.get('/page1', async ({ inertia }) => {
-  return inertia.render('Page1')
-})
-
-Route.get('/auth/login', async ({ inertia }) => {
-  return inertia.render('Auth/Login')
-})
-
-Route.get('/dashboard', async ({ inertia }) => {
-  return inertia.render('Dashboard/Transaction')
-})
+// dashboard
+Route.get('/dashboard', 'DashboardController.index').middleware('auth')

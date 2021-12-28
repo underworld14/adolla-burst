@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Inertia } from '@inertiajs/inertia'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBell,
@@ -59,6 +60,10 @@ export default (props) => {
         </Row>
       </ListGroup.Item>
     )
+  }
+
+  const logOut = () => {
+    Inertia.post('/auth/logout')
   }
 
   return (
@@ -132,7 +137,7 @@ export default (props) => {
 
                 <Dropdown.Divider />
 
-                <Dropdown.Item className="fw-bold">
+                <Dropdown.Item className="fw-bold" onClick={logOut}>
                   <FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Logout
                 </Dropdown.Item>
               </Dropdown.Menu>

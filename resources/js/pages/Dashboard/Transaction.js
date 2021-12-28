@@ -16,8 +16,6 @@ import { TransactionsTable } from '../../components/Tables'
 import DashboardLayout from '../../layouts/DashboardLayout'
 
 const Transaction = () => {
-  console.log('rendered')
-
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
